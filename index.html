@@ -902,13 +902,41 @@
             </div>
 
 
-        <form class="contact-form" action="https://formsubmit.co" method="POST">
-    <input type="text" name="name" placeholder="Nombre y Apellido" required>
-    <input type="text" name="company" placeholder="Empresa">
-    <input type="email" name="email" placeholder="Teléfono / Email" required>
-    <textarea name="message" placeholder="Mensaje / Requerimiento" rows="5" required></textarea>
-    <button type="submit" class="btn btn-primary">CONSULTAR AHORA</button>
+<!-- FORMULARIO DIRECTO A WHATSAPP CONECTADO -->
+<form class="contact-form" onsubmit="enviarWhatsApp(event)">
+    <input type="text" id="ws-nombre" placeholder="Nombre y Apellido" required>
+    <input type="text" id="ws-empresa" placeholder="Empresa">
+    <input type="email" id="ws-contacto" placeholder="Teléfono / Email" required>
+    <textarea id="ws-mensaje" placeholder="Mensaje / Requerimiento" rows="5" required></textarea>
+    <button type="submit" class="btn btn-primary"><i class="fab fa-whatsapp"></i> CONSULTAR AHORA</button>
 </form>
+
+<script>
+function enviarWhatsApp(event) {
+    event.preventDefault();
+    
+    // Captura los datos ingresados por el cliente
+    const nombre = document.getElementById('ws-nombre').value;
+    const empresa = document.getElementById('ws-empresa').value || 'No especificada';
+    const contacto = document.getElementById('ws-contacto').value;
+    const mensaje = document.getElementById('ws-mensaje').value;
+    
+    // Tu número de WhatsApp de Córdoba (543516818498)
+    const telefono = "543516818498";
+    
+    // Arma el texto formateado de forma atractiva y comercial
+    const texto = `*Nuevo Contacto desde la Web CBA IT Solutions*%0A%0A` +
+                  `👤 *Nombre:* ${nombre}%0A` +
+                  `🏢 *Empresa:* ${empresa}%0A` +
+                  `📞 *Contacto:* ${contacto}%0A` +
+                  `✉️ *Mensaje:* ${mensaje}`;
+                  
+    // Crea el enlace oficial de WhatsApp y redirige al usuario
+    const url = `https://wa.me{telefono}?text=${texto}`;
+    window.open(url, '_blank');
+}
+</script>
+
 
             
             </div>
