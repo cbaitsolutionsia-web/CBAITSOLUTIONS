@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+        <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -901,13 +901,14 @@
                 </div>
             </div>
             
-           <form class="contact-form">
-            <input type="text" placeholder="Nombre y Apellido" required>
-            <input type="text" placeholder="Empresa">
-            <input type="text" placeholder="Teléfono / Email" required>
-            <textarea placeholder="Mensaje / Requerimiento" rows="5" required></textarea>
+           <form class="contact-form" action="https://formspree.io" method="POST">
+            <input type="text" name="nombre" placeholder="Nombre y Apellido" required>
+            <input type="text" name="empresa" placeholder="Empresa">
+            <input type="email" name="contacto" placeholder="Teléfono / Email" required>
+            <textarea name="mensaje" placeholder="Mensaje / Requerimiento" rows="5" required></textarea>
             <button type="submit" class="btn btn-primary">CONSULTAR AHORA</button>
-            </form>
+</form>
+
             </div>
         </div>
     </section>
