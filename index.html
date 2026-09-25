@@ -925,11 +925,12 @@ function enviarWhatsApp(event) {
     const telefono = "543516818498";
     
     // Arma el texto formateado de forma atractiva y comercial
-    const texto = `*Nuevo Contacto desde la Web CBA IT Solutions*%0A%0A` +
-                  `👤 *Nombre:* ${nombre}%0A` +
-                  `🏢 *Empresa:* ${empresa}%0A` +
-                  `📞 *Contacto:* ${contacto}%0A` +
-                  `✉️ *Mensaje:* ${mensaje}`;
+        
+   // const texto = `*Nuevo Contacto desde la Web CBA IT Solutions*%0A%0A` +
+     //             `👤 *Nombre:* ${nombre}%0A` +
+      //            `🏢 *Empresa:* ${empresa}%0A` +
+       //           `📞 *Contacto:* ${contacto}%0A` +
+        //          `✉️ *Mensaje:* ${mensaje}`;
                   
     // Crea el enlace oficial de WhatsApp y redirige al usuario
     const url = `https://wa.me{telefono}?text=${texto}`;
