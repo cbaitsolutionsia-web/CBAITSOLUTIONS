@@ -1,0 +1,970 @@
+        <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBA IT SOLUTIONS | Consultoría IT & Soporte Tecnológico</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0052CC;
+            --primary-dark: #0747A6;
+            --secondary: #00B8D9;
+            --dark: #091E42;
+            --light: #F4F5F7;
+            --white: #FFFFFF;
+            --text: #172B4D;
+            --text-muted: #6B778C;
+            --danger: #DE350B;
+            --success: #36B37E;
+            --warning: #FFAB00;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background-color: var(--white);
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: var(--dark);
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        .logo-image {
+            display: block;
+            width: 12rem;
+            height: 3.3rem;
+            object-fit: contain;
+        }
+
+        .hero-logo {
+            display: block;
+            width: min(28rem, 82vw);
+            height: auto;
+            margin: 0 auto 1.5rem;
+            mix-blend-mode: multiply;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.25rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 3rem auto;
+            font-size: 1.1rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 9rem;
+            padding-bottom: 6rem;
+            text-align: center;
+            background: radial-gradient(circle at top right, rgba(0, 184, 217, 0.05), transparent),
+                        radial-gradient(circle at bottom left, rgba(0, 82, 204, 0.05), transparent);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .hero .tagline {
+            font-size: 1.25rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: 0 auto 2.5rem auto;
+            font-size: 1.2rem;
+            color: var(--text-muted);
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Problems Section */
+        .problems {
+            background-color: var(--light);
+            max-width: 100%;
+            padding: 5rem 0;
+        }
+
+        .problems-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .problem-card {
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--danger);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .problem-card i {
+            color: var(--danger);
+            font-size: 1.25rem;
+            margin-top: 0.2rem;
+        }
+
+        .problem-card p {
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .problems-footer {
+            text-align: center;
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0, 82, 204, 0.1);
+        }
+
+        .problems-footer h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-box {
+            background: var(--white);
+            border: 1px solid #E3E6EC;
+            border-radius: 8px;
+            padding: 2rem;
+            transition: var(--transition);
+        }
+
+        .service-box:hover {
+            box-shadow: var(--shadow);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .service-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-header i {
+            font-size: 1.75rem;
+            color: var(--primary);
+            background: rgba(0, 82, 204, 0.05);
+            padding: 0.75rem;
+            border-radius: 8px;
+        }
+
+        .service-header h3 {
+            font-size: 1.3rem;
+            color: var(--dark);
+        }
+
+        .service-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+
+        .service-list li {
+            font-size: 0.9rem;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .service-list li::before {
+            content: "•";
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        /* Modalities Section */
+        .modalities {
+            background-color: var(--light);
+            max-width: 100%;
+            padding: 5rem 0;
+        }
+
+        .modalities-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .modalities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .modality-card {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border-top: 5px solid var(--text-muted);
+        }
+
+        .modality-card.puntual { border-top-color: var(--success); }
+        .modality-card.mensual { border-top-color: var(--primary); }
+        .modality-card.proyecto { border-top-color: #7A42F4; }
+
+        .modality-card i {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .modality-card.puntual i { color: var(--success); }
+        .modality-card.mensual i { color: var(--primary); }
+        .modality-card.proyecto i { color: #7A42F4; }
+
+        .modality-card h3 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        /* Experience Section */
+        .experience-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .exp-badge {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .exp-badge .years {
+            font-size: 4rem;
+            font-weight: 700;
+            display: block;
+            line-height: 1;
+        }
+
+        .exp-badge .text {
+            font-size: 1.1rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        .exp-details h3 {
+            font-size: 1.75rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .exp-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .exp-tag {
+            background: rgba(0, 82, 204, 0.05);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .quote-box {
+            border-left: 4px solid var(--secondary);
+            padding-left: 1.5rem;
+            font-style: italic;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* Process Section */
+        .process {
+            background-color: var(--light);
+            max-width: 100%;
+            padding: 5rem 0;
+        }
+
+        .process-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .process-step {
+            flex: 1;
+            min-width: 200px;
+            background: var(--white);
+            padding: 2rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-num {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin: 0 auto 1rem auto;
+        }
+
+        .process-step h3 {
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+            font-size: 1.2rem;
+        }
+
+        .process-step p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* About Section */
+        .about {
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .about h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-quote {
+            font-size: 1.75rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin-top: 2.5rem;
+            line-height: 1.4;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--dark);
+            color: var(--white);
+            max-width: 100%;
+            padding: 5rem 0;
+        }
+
+        .contact-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+        }
+
+        .contact-info h2 {
+            color: var(--white);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .contact-info p {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-channels {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .channel {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .channel:hover {
+            color: var(--secondary);
+        }
+
+        .channel i {
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #E3E6EC;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 1rem;
+            color: var(--text);
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 82, 204, 0.1);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .contact-form .btn {
+            width: 100%;
+            justify-content: center;
+            padding: 1rem;
+            font-size: 1.05rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #071A3E;
+            color: rgba(255,255,255,0.5);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .contact-inner {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .experience-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+            nav {
+                padding: 1rem;
+            }
+            .nav-links {
+                display: none; /* Can be expanded into mobile menu later */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#inicio" class="logo" aria-label="CBA IT Solutions, inicio"><img class="logo-image" src="logo-cbait.jpg" alt="CBA IT Solutions"></a>
+        <ul class="nav-links">
+            <li><a href="#problemas">Problemas Comunes</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#pymes">Planes Pymes</a></li>
+            <li><a href="#experiencia">Trayectoria</a></li>
+            <li><a href="#metodo">Cómo Trabajamos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <a href="https://wa.me/543510000000" target="_blank" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="inicio">
+        <img class="hero-logo" src="logo-cbait.jpg" alt="Logo de CBA IT Solutions">
+        <h1>CBA IT SOLUTIONS</h1>
+        <div class="tagline">Consultoría IT | Soporte y Soluciones Tecnológicas</div>
+        <p>La tecnología de tu empresa, en buenas manos. Ayudamos a pequeñas y medianas empresas a mantener, mejorar y evolucionar su infraestructura y sistemas tecnológicos.</p>
+        <div class="hero-btns">
+            <a href="#contacto" class="btn btn-primary">📲 Solicitar asesoramiento</a>
+            <a href="#servicios" class="btn btn-outline">🔧 Ver servicios</a>
+        </div>
+    </header>
+
+    <!-- Problems Section -->
+    <section id="problemas" class="problems">
+        <div class="problems-inner">
+            <h2 class="section-title">¿Tu empresa tiene estos problemas?</h2>
+            <div class="section-subtitle">Identificar las fallas a tiempo es el primer paso para construir una infraestructura sólida y escalable.</div>
+            
+            <div class="problems-grid">
+                <div class="problem-card"><i class="fas fa-times-circle"></i> <p>"Tenemos problemas recurrentes de sistemas."</p></div>
+                <div class="problem-card"><i class="fas fa-times-circle"></i> <p>"Nadie se ocupa realmente de IT."</p></div>
+                <div class="problem-card"><i class="fas fa-times-circle"></i> <p>"Nuestro servidor necesita mantenimiento."</p></div>
+                <div class="problem-card"><i class="fas fa-times-circle"></i> <p>"Los usuarios tienen problemas constantemente."</p></div>
+                <div class="problem-card"><i class="fas fa-times-circle"></i> <p>"Tenemos SAP pero necesitamos soporte."</p></div>
+                <div class="problem-card"><i class="fas fa-times-circle"></i> <p>"No sabemos si nuestros backups funcionan."</p></div>
+                <div class="problem-card"><i class="fas fa-times-circle"></i> <p>"La infraestructura quedó chica."</p></div>
+                <div class="problem-card"><i class="fas fa-times-circle"></i> <p>"Necesitamos mejorar nuestros procesos."</p></div>
+            </div>
+
+            <div class="problems-footer">
+                <h3>CBA IT Solutions puede ayudarte.</h3>
+                <p>Convertimos los dolores de cabeza tecnológicos en soluciones previsibles, estables y eficientes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <div class="section-subtitle">Soluciones integrales estructuradas para cubrir cada capa tecnológica de tu negocio.</div>
+        
+        <div class="services-grid">
+            <!-- Box 1 -->
+            <div class="service-box">
+                <div class="service-header">
+                    <i class="fas fa-tools"></i>
+                    <h3>Soporte y Administración IT</h3>
+                </div>
+                <ul class="service-list">
+                    <li>Soporte a usuarios</li>
+                    <li>Servidores y estaciones</li>
+                    <li>Administración de redes</li>
+                    <li>Resolución de incidentes</li>
+                    <li>Mantenimiento preventivo</li>
+                    <li>Monitoreo activo</li>
+                </ul>
+            </div>
+
+            <!-- Box 2 -->
+            <div class="service-box">
+                <div class="service-header">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>ERP y Sistemas de Gestión</h3>
+                </div>
+                <ul class="service-list">
+                    <li>SAP Business One</li>
+                    <li>BEAS Manufacturing</li>
+                    <li>Produmex</li>
+                    <li>Soporte funcional</li>
+                    <li>Mejora de procesos</li>
+                    <li>Crystal Reports</li>
+                    <li>Integración de sistemas</li>
+                </ul>
+            </div>
+
+            <!-- Box 3 -->
+            <div class="service-box">
+                <div class="service-header">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>Infraestructura y Redes</h3>
+                </div>
+                <ul class="service-list">
+                    <li>Redes LAN / WiFi</li>
+                    <li>Firewalls y VPN</li>
+                    <li>Switches y Routing</li>
+                    <li>Active Directory</li>
+                    <li>Virtualización</li>
+                    <li>Backups corporativos</li>
+                    <li>Seguridad informática</li>
+                </ul>
+            </div>
+
+            <!-- Box 4 -->
+            <div class="service-box">
+                <div class="service-header">
+                    <i class="fas fa-database"></i>
+                    <h3>Bases de Datos y Desarrollo</h3>
+                </div>
+                <ul class="service-list">
+                    <li>SQL Server</li>
+                    <li>Oracle / PL-SQL</li>
+                    <li>Consultas complejas</li>
+                    <li>Optimización de DB</li>
+                    <li>Stored Procedures</li>
+                    <li>Mantenimiento de Apps</li>
+                    <li>Automatizaciones</li>
+                </ul>
+            </div>
+
+            <!-- Box 5 -->
+            <div class="service-box">
+                <div class="service-header">
+                    <i class="fab fa-microsoft"></i>
+                    <h3>Microsoft 365</h3>
+                </div>
+                <ul class="service-list">
+                    <li>Ecosistema M365</li>
+                    <li>Exchange Online</li>
+                    <li>SharePoint corporativo</li>
+                    <li>OneDrive para empresas</li>
+                    <li>Teams y Colaboración</li>
+                    <li>Gestión de identidades</li>
+                    <li>Seguridad y MFA</li>
+                </ul>
+            </div>
+
+            <!-- Box 6 -->
+            <div class="service-box">
+                <div class="service-header">
+                    <i class="fas fa-robot"></i>
+                    <h3>Datos y Automatización</h3>
+                </div>
+                <ul class="service-list">
+                    <li>Power BI dashboards</li>
+                    <li>Reportes gerenciales</li>
+                    <li>Automatización de tareas</li>
+                    <li>Excel avanzado</li>
+                    <li>Integración de datos</li>
+                    <li>IA aplicada a procesos</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pymes Section -->
+    <section id="pymes" class="modalities">
+        <div class="modalities-inner">
+            <h2 class="section-title">IT para Pequeñas y Medianas Empresas</h2>
+            <div class="section-subtitle">No todas las empresas necesitan un departamento de IT completo. Brindamos el conocimiento y la experiencia de un área de Sistemas corporativa, adaptada perfectamente a tu escala y necesidades.</div>
+            
+            <div class="modalities-grid">
+                <div class="modality-card punctual">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Soporte Puntual</h3>
+                    <p>Resolución ágil de incidencias técnicas específicas, bloqueos operativos o demandas de mantenimiento bajo demanda.</p>
+                </div>
+                <div class="modality-card mensual">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Soporte Mensual</h3>
+                    <p>Acompañamiento permanente, monitoreo preventivo y mesa de ayuda dedicada para empresas que no pueden detener su operación.</p>
+                </div>
+                <div class="modality-card proyecto">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3>Proyecto IT</h3>
+                    <p>Diseño y ejecución estructurada de implementaciones, migraciones en la nube, renovaciones de infraestructura o mejoras críticas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experiencia">
+        <div class="experience-container">
+            <div class="exp-badge">
+                <span class="years">+25</span>
+                <span class="text">Años en Tecnología</span>
+            </div>
+            <div class="exp-details">
+                <h3>Experiencia que aporta valor</h3>
+                <div class="exp-tags">
+                    <span class="exp-tag">ERP</span>
+                    <span class="exp-tag">Infraestructura</span>
+                    <span class="exp-tag">Bases de datos</span>
+                    <span class="exp-tag">Desarrollo</span>
+                    <span class="exp-tag">Redes</span>
+                    <span class="exp-tag">Seguridad</span>
+                    <span class="exp-tag">Microsoft 365</span>
+                    <span class="exp-tag">Business Intelligence</span>
+                </div>
+                <div class="quote-box">
+                    "Experiencia trabajando con entornos productivos de alta exigencia, donde la tecnología debe ser invisible por su estabilidad y actuar como un motor que acompaña y potencia el negocio."
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="metodo" class="process">
+        <div class="process-inner">
+            <h2 class="section-title">Cómo Trabajamos</h2>
+            <div class="section-subtitle">Un enfoque metodológico simple y transparente que garantiza previsibilidad y resultados de nivel corporativo.</div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-num">1</div>
+                    <h3>Analizamos</h3>
+                    <p>Entendemos a fondo el problema operativo y auditamos la infraestructura actual.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">2</div>
+                    <h3>Diagnosticamos</h3>
+                    <p>Identificamos las causas raíz y definimos las prioridades críticas de acción.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">3</div>
+                    <h3>Proponemos</h3>
+                    <p>Presentamos alternativas tecnológicas claras junto con sus respectivos costos.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">4</div>
+                    <h3>Implementamos</h3>
+                    <p>Ejecutamos la solución seleccionada minimizando el impacto en la operación diaria.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">5</div>
+                    <h3>Acompañamos</h3>
+                    <p>Realizamos un seguimiento continuo, auditorías preventivas y planes de mejora.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <h2 class="section-title">Sobre CBA IT Solutions</h2>
+        <p class="section-subtitle" style="margin-bottom: 0;">Somos una propuesta de servicios tecnológicos orientada a empresas que necesitan resolver problemas de IT, mejorar sus sistemas y contar con un acompañamiento tecnológico sumamente confiable.</p>
+        <div class="about-quote">
+            "No se trata solamente de solucionar problemas. Se trata de evitar que vuelvan a ocurrir."
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="contact">
+        <div class="contact-inner">
+            <div class="contact-info">
+                <h2>¿Necesitás ayuda con IT?</h2>
+                <p>Hablemos de tu proyecto. Completa el formulario o comunícate directamente a través de nuestros canales oficiales.</p>
+                <div class="contact-channels">
+                    <a href="https://wa.me/543516818498" target="_blank" class="channel">
+                        <i class="fab fa-whatsapp"></i> <span>WhatsApp Directo</span>
+                    </a>
+                    <a href="mailto:cbaitsolutionsia@gmail.com" class="channel">
+                        <i class="far fa-envelope"></i> <span>cbaitsolutionsia@gmail.com</span>
+                    </a>
+                    <div class="channel">
+                        <i class="fas fa-map-marker-alt"></i> <span>Córdoba, Argentina</span>
+                    </div>
+                    <a href="https://www.linkedin.com/in/cbaitsolutions-ia-585568401/" target="_blank" class="channel">
+                        <i class="fab fa-linkedin-in"></i> <span>LinkedIn Corporativo</span>
+                    </a>
+                </div>
+            </div>
+
+
+                
+ <form class="contact-form" onsubmit="enviarWhatsApp(event)">
+    <input type="text" id="ws-nombre" placeholder="Nombre y Apellido" required>
+    <input type="text" id="ws-empresa" placeholder="Empresa">
+    <input type="email" id="ws-contacto" placeholder="Teléfono / Email" required>
+    <textarea id="ws-mensaje" placeholder="Mensaje / Requerimiento" rows="5" required></textarea>
+    <button type="submit" class="btn btn-primary"><i class="fab fa-whatsapp"></i> CONSULTAR AHORA</button>
+</form>
+
+<script>
+function enviarWhatsApp(event) {
+    event.preventDefault();
+    
+    // Captura los datos ingresados por el cliente
+    //const nombre = document.getElementById('ws-nombre').value;
+    //const empresa = document.getElementById('ws-empresa').value || 'No especificada';
+   // const contacto = document.getElementById('ws-contacto').value;
+    //const mensaje = document.getElementById('ws-mensaje').value;
+    
+    // Tu número de WhatsApp de Córdoba (543516818498)
+   // const telefono = "543516818498";
+    
+    // Arma el texto formateado de forma atractiva y comercial
+        
+   // const texto = `*Nuevo Contacto desde la Web CBA IT Solutions*%0A%0A` +
+     //             `👤 *Nombre:* ${nombre}%0A` +
+      //            `🏢 *Empresa:* ${empresa}%0A` +
+       //           `📞 *Contacto:* ${contacto}%0A` +
+        //          `✉️ *Mensaje:* ${mensaje}`;
+                  
+    // Crea el enlace oficial de WhatsApp y redirige al usuario
+    const url = `https://wa.me{telefono}?text=${texto}`;
+    window.open(url, '_blank');
+}
+</script>
+
+
+            
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 CBA IT SOLUTIONS. Todos los derechos reservados. Córdoba, Argentina.</p>
+    </footer>
+
+</body>
+</html>
+
+
+
+
