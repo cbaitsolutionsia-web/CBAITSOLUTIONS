@@ -57,15 +57,27 @@
         }
 
         .logo {
-            font-weight: 700;
-            font-size: 1.25rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
             color: var(--dark);
             text-decoration: none;
-            letter-spacing: 0.5px;
+            flex-shrink: 0;
         }
 
-        .logo span {
-            color: var(--primary);
+        .logo-image {
+            display: block;
+            width: 12rem;
+            height: 3.3rem;
+            object-fit: contain;
+        }
+
+        .hero-logo {
+            display: block;
+            width: min(28rem, 82vw);
+            height: auto;
+            margin: 0 auto 1.5rem;
+            mix-blend-mode: multiply;
         }
 
         .nav-links {
@@ -627,7 +639,7 @@
 
     <!-- Navigation -->
     <nav>
-        <a href="#" class="logo">CBA <span>IT SOLUTIONS</span></a>
+        <a href="#inicio" class="logo" aria-label="CBA IT Solutions, inicio"><img class="logo-image" src="logo-cbait.jpg" alt="CBA IT Solutions"></a>
         <ul class="nav-links">
             <li><a href="#problemas">Problemas Comunes</a></li>
             <li><a href="#servicios">Servicios</a></li>
@@ -640,7 +652,8 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero">
+    <header class="hero" id="inicio">
+        <img class="hero-logo" src="logo-cbait.jpg" alt="Logo de CBA IT Solutions">
         <h1>CBA IT SOLUTIONS</h1>
         <div class="tagline">Consultoría IT | Soporte y Soluciones Tecnológicas</div>
         <p>La tecnología de tu empresa, en buenas manos. Ayudamos a pequeñas y medianas empresas a mantener, mejorar y evolucionar su infraestructura y sistemas tecnológicos.</p>
@@ -951,3 +964,7 @@ function enviarWhatsApp(event) {
 
 </body>
 </html>
+
+
+
+
